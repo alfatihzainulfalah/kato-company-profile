@@ -18,6 +18,30 @@
       toggle.querySelector(".menu-glyph").textContent = "☰";
     }),
   );
+  const highlight = document.querySelector(".h1-highlight");
+  if (highlight) {
+    const text = highlight.textContent;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduceMotion) {
+      highlight.textContent = text;
+    } else {
+      highlight.textContent = "";
+      highlight.classList.add("typing-cursor");
+      let i = 0;
+      const typeNext = () => {
+        i++;
+        highlight.textContent = text.slice(0, i);
+        if (i < text.length) {
+          setTimeout(typeNext, 65);
+        } else {
+          highlight.classList.remove("typing-cursor");
+        }
+      };
+      setTimeout(typeNext, 400);
+    }
+  }
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) =>
