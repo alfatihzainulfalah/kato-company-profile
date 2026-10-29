@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 170" width="100%" height="100%" preserveAspectRatio="none">
+  <path
+    d="M 20,112 L 20,86 L 58,86 L 58,64 L 128,64 L 128,48 L 218,48 L 218,38 L 330,38 L 330,54 L 420,54 L 420,36 L 500,36 L 500,58 L 580,58 L 580,70 L 612,70 L 612,96 L 560,96 L 560,116 L 480,116 L 480,132 L 400,132 L 400,112 L 320,112 L 320,128 L 240,128 L 240,142 L 160,142 L 160,120 L 90,120 L 90,136 L 40,136 L 40,118 Z"
+    fill="#ffffff"
+  />
+  <rect x="10" y="90" width="26" height="22" fill="#ffffff" transform="rotate(-8 23 101)" />
+  <rect x="596" y="58" width="24" height="24" fill="#ffffff" transform="rotate(6 608 70)" />
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 160" width="100%" height="100%">
+  <g fill="#0B1E2D">
+    <!-- Huruf K -->
+    <path d="M 40,30 H 75 V 82 L 118,30 H 158 L 108,88 L 160,150 H 118 L 75,98 V 150 H 40 Z" />
+
+    <!-- Huruf A (Sisi kanan gelap/biru tua) -->
+    <path d="M 215,30 C 223,30 228,34 233,42 L 290,150 H 250 L 221,85 Z" />
+
+    <!-- Huruf T -->
+    <path d="M 275,30 H 390 V 62 H 349 V 150 H 316 V 62 H 275 Z" />
+
+    <!-- Huruf O -->
+    <path d="M 470,30 C 506,30 535,57 535,90 C 535,123 506,150 470,150 C 434,150 405,123 405,90 C 405,57 434,30 470,30 Z M 470,60 C 451,60 437,73 437,90 C 437,107 451,120 470,120 C 489,120 503,107 503,90 C 503,73 489,60 470,60 Z" />
+  </g>
+
+  <!-- Huruf A (Sisi kiri oranye/kuning) -->
+  <path fill="#FAA61A" d="M 215,30 L 160,150 H 196 L 228,70 Z" />
+</svg>
