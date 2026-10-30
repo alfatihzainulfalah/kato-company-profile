@@ -91,11 +91,11 @@ onUnmounted(() => {
           Pilihan bahan dan ukuran lengkap untuk setiap aktivitas Anda.
         </p>
         <div class="kato-hero__actions">
-          <a href="#brands" class="kato-hero__primary">
-            Jelajahi Produk
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <a href="https://shopee.co.id/katofactory" class="kato-hero__primary">
+            Beli Sekarang
+            <!-- <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5 12h14m-6-6 6 6-6 6" />
-            </svg>
+            </svg> -->
           </a>
           <a href="#contact" class="kato-hero__secondary">Tanya Pemesanan</a>
         </div>
@@ -275,7 +275,10 @@ onUnmounted(() => {
   line-height: 1.08;
   letter-spacing: -2.5px;
 }
-.kato-hero__title > span:last-child { color: #d8a039; }
+.kato-hero__title > span:last-child {
+  color: #faa719;
+  text-shadow: 0 2px 4px #081e3229;
+}
 .kato-hero__title-line {
   display: flex;
   align-items: center;
@@ -422,7 +425,7 @@ onUnmounted(() => {
   border: 4px solid #fff;
   border-radius: 14px;
   background: #e9e6dd;
-  box-shadow: 0 12px 28px #081e3212;
+  box-shadow: 0 12px 28px #081e3224, 0 3px 8px #081e3214;
 }
 .kato-hero__card--main {
   grid-column: 1;

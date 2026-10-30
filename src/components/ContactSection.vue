@@ -26,7 +26,7 @@ const linkGroups = [
     <div class="contact-us__inner">
       <header class="contact-us__heading">
         <div>
-          <p class="contact-us__eyebrow">04 / HUBUNGI KAMI</p>
+
           <h2 id="contact-title">Contact Us<span aria-hidden="true">.</span></h2>
           <p class="contact-us__intro">Informasi produk, pemesanan, dan kerja sama.</p>
         </div>

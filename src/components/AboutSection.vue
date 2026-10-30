@@ -68,6 +68,7 @@
   position: relative;
   isolation: isolate;
   aspect-ratio: 1 / 1;
+  filter: drop-shadow(0 12px 16px #081e321c) drop-shadow(0 3px 5px #081e3212);
 }
 
 .kato-about__art::before {

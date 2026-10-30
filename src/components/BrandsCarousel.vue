@@ -2,6 +2,12 @@
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { items } from "../data/items";
 
+const officialShops = [
+  { name: "Shopee", icon: "shopee.svg", tint: "#ee4d2d", invert: true, href: "https://shopee.co.id/katofactory" },
+  { name: "Tokopedia", icon: "shops/tokopedia.png", tint: null, invert: false, href: "https://www.tokopedia.com/kato-factory" },
+  { name: "TikTok Shop", icon: "shops/tiktok-shop.webp", tint: null, invert: false, href: "https://vt.tiktok.com/ZSggaYhXg/?page=Mall" },
+];
+
 const viewportRef = ref(null);
 const trackRef = ref(null);
 const activePage = ref(0);
@@ -122,10 +128,10 @@ onUnmounted(() => {
       <div>
         <p class="brands-eyebrow">PILIHAN PRODUK KAMI</p>
         <h2 id="brands-title" class="brands-title">
-          <span>Brand</span>
-          <span class="brands-logo">
+          <span>Product</span>
+          <!-- <span class="brands-logo">
             <img src="/assets/Logo-KATO1.svg" alt="KATO" width="1080" height="1080" />
-          </span>
+          </span> -->
         </h2>
       </div>
     </div>
@@ -237,6 +243,37 @@ onUnmounted(() => {
             </svg>
           </button>
         </div>
+      </div>
+    </div>
+
+    <div class="shops" v-reveal>
+      <div class="shops__heading">
+        <p class="brands-eyebrow">BELANJA LEBIH MUDAH</p>
+        <h3 class="shops__title">Official Shop</h3>
+      </div>
+      <div class="shops__grid">
+        <a
+          v-for="shop in officialShops"
+          :key="shop.name"
+          :href="shop.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shops__card"
+          :aria-label="`Kunjungi toko resmi KATO Factory di ${shop.name} (buka tab baru)`"
+        >
+          <span class="shops__icon" :style="shop.tint ? { background: shop.tint } : null">
+            <img
+              :src="`/assets/platforms/${shop.icon}`"
+              :alt="shop.name"
+              :class="{ 'shops__icon-img--invert': shop.invert }"
+              width="40"
+              height="40"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span class="shops__name">Kato Factory</span>
+        </a>
       </div>
     </div>
   </section>
@@ -514,6 +551,81 @@ onUnmounted(() => {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+.shops {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--brands-line);
+}
+.shops__heading { margin-bottom: 24px; }
+.shops__title {
+  margin: 0;
+  color: var(--brands-ink);
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.6px;
+}
+.shops__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.shops__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 32px 20px;
+  border: 1px solid var(--brands-line);
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.shops__card:hover,
+.shops__card:focus-visible {
+  border-color: #a6b4a9;
+  box-shadow: 0 12px 24px -16px rgba(8, 30, 50, 0.25);
+  transform: translateY(-3px);
+}
+.shops__icon {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.shops__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.shops__icon-img--invert {
+  width: 56% !important;
+  height: 56% !important;
+  filter: brightness(0) invert(1);
+}
+.shops__name {
+  color: var(--brands-ink);
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+@media (max-width: 760px) {
+  .shops { margin-top: 36px; padding-top: 28px; }
+  .shops__grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .shops__card { padding: 20px 10px; gap: 10px; }
+  .shops__icon { width: 48px; height: 48px; border-radius: 12px; }
+  .shops__name { font-size: 12px; }
+}
+@media (max-width: 420px) {
+  .shops__grid { gap: 8px; }
+  .shops__card { padding: 16px 6px; }
 }
 @media (max-width: 1100px) {
   .brands-track { --cards-per-page: 2; gap: 20px; }
