@@ -34,7 +34,8 @@ onUnmounted(() => {
     <nav class="nav" :class="{ 'nav-open': navOpen }" aria-label="Navigasi utama">
       <a href="#home" @click="closeNav">Beranda</a
       ><a href="#about" @click="closeNav">Tentang Kami</a
-      ><a class="nav-mobile-contact" href="#contact" @click="closeNav">Hubungi Kami</a>
+      ><a href="#brands" @click="closeNav">Produk</a
+      ><a href="#contact" @click="closeNav">Kontak</a>
     </nav>
     <button
       class="menu-toggle"
