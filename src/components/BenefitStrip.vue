@@ -12,7 +12,10 @@ const benefits = [
     <div class="benefit-track">
       <div class="benefit-track-group" v-for="group in 2" :key="group" :aria-hidden="group === 2 ? true : undefined">
         <template v-for="(benefit, i) in benefits" :key="benefit.label">
-          <div class="benefit-item"><span class="inline-icon" aria-hidden="true">{{ benefit.icon }}</span> {{ benefit.label }}</div>
+          <div class="benefit-item">
+            <span class="inline-icon" aria-hidden="true">{{ benefit.icon }}</span>
+            <span class="benefit-label">{{ benefit.label }}</span>
+          </div>
           <span class="strip-star" aria-hidden="true">✳</span>
         </template>
       </div>
