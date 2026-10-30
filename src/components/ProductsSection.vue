@@ -35,7 +35,6 @@ const products = [
   <section id="products" class="section products-section">
     <div class="section-heading" v-reveal>
       <div>
-        <div class="section-kicker">02 — PILIHAN PRODUK</div>
         <h2>Produk untuk<br /><em>semua kebutuhan.</em></h2>
       </div>
       <p>Temukan pilihan kantong dan kemasan untuk rumah, usaha, dan kebutuhan sehari-hari.</p>

@@ -462,71 +462,33 @@ button {
     transform: translateX(-50%);
   }
 }
+:root {
+  --gutter: max(5.5%, calc((100vw - 1400px) / 2));
+}
 .section {
-  padding: 120px max(5.5%, calc((100vw - 1400px) / 2));
+  padding: 120px var(--gutter);
 }
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
-  align-items: center;
+  align-items: stretch;
 }
 .about-art {
-  height: 470px;
   position: relative;
-  background: #e9f9f4;
-  border-radius: 30px;
+  min-height: 560px;
   overflow: hidden;
-  display: grid;
-  place-items: center;
+  border-radius: 0 28px 28px 0;
+  margin-left: calc(-1 * var(--gutter));
+  width: calc(100% + var(--gutter));
 }
-.about-art-circle {
+.about-photo {
   position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: #b4f1e4;
-  right: -100px;
-  top: -80px;
-}
-.about-big-letter {
-  position: relative;
-  font: 900 clamp(85px, 10vw, 160px) "Outfit";
-  letter-spacing: -13px;
-  transform: rotate(-9deg);
-  color: #081e32;
-  text-shadow: 10px 13px 0 #fff;
-}
-.about-big-letter span {
-  color: #ffb400;
-}
-.about-art-label {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 800;
-}
-.about-art-label span {
-  margin-left: 25px;
-}
-.about-mini-card {
-  position: absolute;
-  right: 20px;
-  bottom: 25px;
-  max-width: 230px;
-  padding: 18px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 12px 35px #0646371a;
-  font-size: 12px;
-  font-weight: 700;
-}
-.about-mini-card span {
-  color: #eaa600;
-  font-size: 25px;
-  margin-right: 10px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .section-kicker {
   margin-bottom: 25px;
@@ -703,12 +665,6 @@ button {
 .product-card:hover .product-arrow {
   background: #ffb400;
 }
-.advantages-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
 /* Brands Section */
 .brands-section {
   background: #fff;
@@ -831,34 +787,6 @@ button {
 }
 .brand-card-features li:first-child {
   border-top: none;
-}
-.advantage {
-  border-top: 1px solid #d8e7e3;
-  padding: 28px 10px 0 0;
-}
-.adv-icon {
-  height: 58px;
-  width: 58px;
-  background: #e5f8f3;
-  color: #00a995;
-  display: grid;
-  place-items: center;
-  border-radius: 18px;
-  margin-bottom: 32px;
-}
-.advantage > span {
-  color: #8a9b9b;
-  font-size: 11px;
-  font-weight: 800;
-}
-.advantage h3 {
-  font: 700 21px "Outfit";
-  margin: 14px 0;
-}
-.advantage p {
-  font-size: 13px;
-  line-height: 1.85;
-  color: #72828a;
 }
 .contact-section {
   position: relative;
@@ -984,8 +912,7 @@ button {
   .hero h1 {
     font-size: clamp(50px, 6vw, 75px);
   }
-  .product-grid,
-  .advantages-grid {
+  .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .brand-card {
@@ -1106,10 +1033,10 @@ button {
     gap: 45px;
   }
   .about-art {
-    height: 320px;
-  }
-  .about-big-letter {
-    font-size: 110px;
+    min-height: 300px;
+    margin: 0 -6%;
+    width: calc(100% + 12%);
+    border-radius: 0;
   }
   .section h2 {
     font-size: 43px;
@@ -1121,8 +1048,7 @@ button {
     max-width: 100%;
     margin-top: 20px;
   }
-  .product-grid,
-  .advantages-grid {
+  .product-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
@@ -1156,12 +1082,6 @@ button {
     width: 31px;
     height: 31px;
   }
-  .advantages-grid {
-    row-gap: 38px;
-  }
-  .advantage h3 {
-    font-size: 18px;
-  }
   .contact-section {
     padding: 80px 6%;
   }
@@ -1192,9 +1112,6 @@ button {
   }
   .product-card {
     min-height: 340px;
-  }
-  .advantages-grid {
-    grid-template-columns: 1fr 1fr;
   }
   .hero-actions {
     flex-wrap: wrap;
@@ -1228,9 +1145,6 @@ button {
 .menu-toggle {
   min-width: 40px;
   min-height: 40px;
-}
-.adv-icon .inline-icon {
-  font-size: 29px;
 }
 .product-arrow {
   font-size: 22px;

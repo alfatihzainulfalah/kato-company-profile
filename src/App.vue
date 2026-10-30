@@ -3,9 +3,7 @@ import AppHeader from "./components/AppHeader.vue";
 import HeroSection from "./components/HeroSection.vue";
 import BenefitStrip from "./components/BenefitStrip.vue";
 import AboutSection from "./components/AboutSection.vue";
-import ProductsSection from "./components/ProductsSection.vue";
 import BrandsCarousel from "./components/BrandsCarousel.vue";
-import AdvantagesSection from "./components/AdvantagesSection.vue";
 import ContactSection from "./components/ContactSection.vue";
 import AppFooter from "./components/AppFooter.vue";
 </script>
@@ -17,9 +15,7 @@ import AppFooter from "./components/AppFooter.vue";
       <HeroSection />
       <BenefitStrip />
       <AboutSection />
-      <ProductsSection />
       <BrandsCarousel />
-      <AdvantagesSection />
       <ContactSection />
     </main>
     <AppFooter />
