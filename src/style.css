@@ -819,6 +819,13 @@ button {
 .contact-section h2 em {
   color: #d8a039;
 }
+.heading-logo {
+  display: inline-block;
+  height: 0.72em;
+  width: auto;
+  vertical-align: baseline;
+  transform: translateY(0.08em);
+}
 .contact-section p {
   max-width: 490px;
   color: #b5c7cd;
@@ -839,12 +846,11 @@ button {
   position: absolute;
   right: 1%;
   bottom: -65px;
-  font: 900 clamp(160px, 22vw, 340px) "Outfit";
-  letter-spacing: -25px;
-  color: #ffffff0c;
-}
-.contact-decor span {
-  color: #d8a0391a;
+  width: clamp(480px, 66vw, 1020px);
+  height: auto;
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
 }
 .footer {
   position: relative;
@@ -1109,9 +1115,8 @@ button {
     font-size: 55px;
   }
   .contact-decor {
-    font-size: 140px;
+    width: clamp(320px, 80vw, 420px);
     bottom: -25px;
-    letter-spacing: -13px;
   }
   .footer {
     padding: 35px 6%;
