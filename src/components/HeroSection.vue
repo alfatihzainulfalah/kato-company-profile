@@ -156,6 +156,7 @@ onUnmounted(() => {
                   height="575"
                   :fetchpriority="activeGroup === 0 && index === 0 ? 'high' : 'auto'"
                   class="kato-hero__card-image"
+                  :style="{ objectPosition: product.heroImagePosition || 'center' }"
                 />
                 <figcaption class="kato-hero__card-caption">
                   <span>{{ product.material }}</span>
@@ -274,7 +275,7 @@ onUnmounted(() => {
   line-height: 1.08;
   letter-spacing: -2.5px;
 }
-.kato-hero__title > span:last-child { color: #a47020; }
+.kato-hero__title > span:last-child { color: #d8a039; }
 .kato-hero__title-line {
   display: flex;
   align-items: center;
@@ -400,7 +401,7 @@ onUnmounted(() => {
   position: absolute;
   z-index: -1;
   inset: -3% 32% -3% 42%;
-  background: #e2be73;
+  background: #d8a039;
   transform: skew(-12deg);
   content: "";
 }
@@ -436,9 +437,10 @@ onUnmounted(() => {
 }
 .kato-hero__card-caption {
   position: absolute;
-  inset: auto 0 0;
-  padding: 32px 16px 14px;
-  background: linear-gradient(transparent, #081e32e8);
+  /* Keep captions above the packaging labels in the lower part of each photo. */
+  inset: 0 0 auto;
+  padding: 14px 16px 32px;
+  background: linear-gradient(#081e32e8, transparent);
   color: #fff;
 }
 .kato-hero__card-caption > span {
@@ -455,7 +457,7 @@ onUnmounted(() => {
   letter-spacing: 0.3px;
 }
 .kato-hero__card--main .kato-hero__card-caption {
-  padding: 48px 20px 20px;
+  padding: 20px 20px 48px;
 }
 .kato-hero__card--main h2 {
   font-size: clamp(16px, 1.6vw, 24px);
@@ -622,9 +624,9 @@ onUnmounted(() => {
   }
   .kato-hero__collage-panel { gap: 10px; }
   .kato-hero__card { border-width: 3px; border-radius: 12px; }
-  .kato-hero__card-caption { padding: 28px 10px 10px; }
+  .kato-hero__card-caption { padding: 10px 10px 28px; }
   .kato-hero__card-caption h2 { font-size: 12px; }
-  .kato-hero__card--main .kato-hero__card-caption { padding: 36px 12px 14px; }
+  .kato-hero__card--main .kato-hero__card-caption { padding: 14px 12px 36px; }
   .kato-hero__card--main h2 { font-size: 17px; }
   .kato-hero__footer { min-height: 60px; }
   .kato-hero__footer > span { display: none; }
