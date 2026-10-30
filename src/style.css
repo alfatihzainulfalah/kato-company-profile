@@ -81,39 +81,22 @@ button {
 }
 .hero {
   position: relative;
-  min-height: 760px;
+  min-height: clamp(600px, 88vh, 760px);
   padding-top: 88px;
-  background: linear-gradient(135deg, #eafff9 0%, #b8f0e4 50%, #65e9d3 100%);
+  background: #ffffff;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(#fff8 1px, transparent 1px),
-    linear-gradient(90deg, #fff8 1px, transparent 1px);
+    linear-gradient(#08121708 1px, transparent 1px),
+    linear-gradient(90deg, #08121708 1px, transparent 1px);
   background-size: 54px 54px;
   mask-image: linear-gradient(90deg, transparent 5%, #0008 55%, transparent);
-}
-.hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(6px);
-  pointer-events: none;
-}
-.glow-one {
-  width: 600px;
-  height: 600px;
-  background: #9cfbe4aa;
-  right: -120px;
-  top: 80px;
-}
-.glow-two {
-  width: 500px;
-  height: 500px;
-  background: #d8efffff;
-  left: -270px;
-  bottom: -300px;
 }
 .hero-inner {
   position: relative;
@@ -271,7 +254,7 @@ button {
   display: grid;
   place-items: center;
   margin-left: -9px;
-  border: 3px solid #eafff8;
+  border: 3px solid #fff;
   background: #081e32;
   color: white;
   border-radius: 50%;
@@ -305,7 +288,7 @@ button {
 }
 .orbit {
   position: absolute;
-  border: 1px solid #ffffffa6;
+  border: 1px solid #0ba99433;
   border-radius: 50%;
   width: 520px;
   height: 520px;
@@ -325,16 +308,6 @@ button {
   bottom: 5px;
   animation: float 7s ease-in-out infinite;
 }
-.stage-halo {
-  position: absolute;
-  width: 470px;
-  height: 420px;
-  left: 50%;
-  top: 2%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, #f6fffc 0%, #b4f3e9 58%, transparent 70%);
-}
 .stage-floor {
   position: absolute;
   bottom: 30px;
@@ -352,80 +325,12 @@ button {
 }
 .product-photo {
   position: absolute;
-  top: -14%;
-  left: -12%;
-  width: 124%;
-  height: 86%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: bottom center;
-}
-.visual-badge {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 18px 8px 8px;
-  background: white;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 800;
-  box-shadow: 0 15px 35px #226b5b24;
-  animation: float 5s ease-in-out infinite;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.visual-badge:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 20px 40px #226b5b3a;
-}
-.visual-badge svg {
-  color: #00ae9a;
-}
-.badge-top {
-  top: 47px;
-  left: 6%;
-  transform: rotate(-5deg);
-}
-.badge-right {
-  right: -4%;
-  top: 160px;
-  animation-delay: -2s;
-}
-.badge-top .inline-icon,
-.badge-right .inline-icon {
-  display: grid;
-  place-items: center;
-  position: relative;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 15px;
-  flex-shrink: 0;
-}
-.badge-top .inline-icon {
-  background: #e3faf4;
-  color: #00ae9a;
-  animation: iconPulseTeal 2.4s ease-out infinite;
-}
-.badge-right .inline-icon {
-  background: #fff3da;
-  color: #d98f00;
-  animation: iconPulseAmber 2.4s ease-out infinite 0.9s;
-}
-.floating-sticker {
-  position: absolute;
-  z-index: 4;
-  right: 3%;
-  bottom: 92px;
-  transform: rotate(-10deg);
-  font: 900 34px/0.96 "Outfit";
-  color: #fff;
-  -webkit-text-stroke: 5px #ef572a;
-  paint-order: stroke fill;
-  animation: float 4s ease-in-out infinite;
-}
-.floating-sticker span {
-  display: block;
 }
 .scroll-cue {
   position: absolute;
@@ -489,7 +394,7 @@ button {
   flex-shrink: 0;
   border-radius: 50%;
   background: rgba(101, 233, 211, 0.12);
-  color: #65e9d3;
+  color: #f3f5f5;
   font-size: 14px;
 }
 .strip-star {
@@ -751,6 +656,130 @@ button {
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 }
+
+/* Brands Section */
+.brands-section {
+  background: #fff;
+}
+.brands-carousel {
+  position: relative;
+}
+.carousel-viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  padding: 10px 2px 26px;
+}
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 16px;
+}
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid #e8efed;
+  background: #fff;
+  color: #081e32;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px #11332614;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s, color 0.25s;
+}
+.carousel-btn:hover {
+  background: #00ae9a;
+  color: #fff;
+  border-color: #00ae9a;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px #00ae9a3a;
+}
+.carousel-btn:active {
+  transform: translateY(-1px) scale(0.96);
+}
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: #d7e4e1;
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+.carousel-dot.active {
+  width: 26px;
+  background: #00ae9a;
+}
+.brand-card {
+  background: #f6faf9;
+  border: 1px solid #e8efed;
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  flex: 0 0 calc((100% - 60px) / 4);
+  scroll-snap-align: start;
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+.brand-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px #113a2b14;
+}
+.brand-card-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+.brand-card h3 {
+  font: 700 16px "Outfit";
+  margin: 0 0 8px;
+  color: #081e32;
+}
+.brand-card-material {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #009d8b;
+  background: #e3faf4;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.brand-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.brand-card-features li {
+  font-size: 11px;
+  color: #6a7c84;
+  padding: 5px 0;
+  border-top: 1px solid #e8efed;
+}
+.brand-card-features li:first-child {
+  border-top: none;
+}
 .advantage {
   border-top: 1px solid #d8e7e3;
   padding: 28px 10px 0 0;
@@ -816,17 +845,6 @@ button {
   color: #9ab0b8;
   font-size: 11px;
 }
-.contact-orb {
-  position: absolute;
-  width: 650px;
-  height: 650px;
-  border-radius: 50%;
-  background: #1d8b81;
-  filter: blur(90px);
-  opacity: 0.3;
-  right: -150px;
-  top: -130px;
-}
 .contact-decor {
   position: absolute;
   right: 1%;
@@ -840,12 +858,13 @@ button {
 }
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  flex-wrap: wrap;
-  padding: 38px 5.5%;
+  text-align: center;
+  gap: 16px;
+  padding: 50px 5.5%;
   background: #f8faf9;
+  border-top: 1px solid #e8efed;
 }
 .footer-brand {
   font-size: 27px;
@@ -892,26 +911,30 @@ button {
     transform: translateY(5px);
   }
 }
-@keyframes iconPulseTeal {
-  0% {
-    box-shadow: 0 0 0 0 #00ae9a66;
+@media (max-height: 820px) and (min-width: 761px) {
+  .hero {
+    min-height: 660px;
   }
-  70% {
-    box-shadow: 0 0 0 12px #00ae9a00;
+  .hero-inner {
+    min-height: 540px;
+    padding: 24px 5.5% 50px;
   }
-  100% {
-    box-shadow: 0 0 0 0 #00ae9a00;
+  .hero-proof {
+    margin-top: 32px;
   }
-}
-@keyframes iconPulseAmber {
-  0% {
-    box-shadow: 0 0 0 0 #ffb40066;
+  .hero-visual {
+    height: 480px;
   }
-  70% {
-    box-shadow: 0 0 0 12px #ffb40000;
+  .orbit {
+    width: 440px;
+    height: 440px;
   }
-  100% {
-    box-shadow: 0 0 0 0 #ffb40000;
+  .orbit-two {
+    width: 360px;
+    height: 360px;
+  }
+  .product-stage {
+    height: 410px;
   }
 }
 @media (max-width: 1100px) {
@@ -929,11 +952,11 @@ button {
   .advantages-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .brand-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+  }
   .product-card {
     min-height: 355px;
-  }
-  .badge-right {
-    right: 0;
   }
 }
 @media (max-width: 760px) {
@@ -1025,28 +1048,6 @@ button {
     width: 350px;
     height: 340px;
   }
-  .visual-badge {
-    font-size: 10px;
-    padding: 6px 14px 6px 6px;
-    gap: 8px;
-  }
-  .badge-top .inline-icon,
-  .badge-right .inline-icon {
-    width: 26px;
-    height: 26px;
-    font-size: 12px;
-  }
-  .badge-top {
-    top: 25px;
-  }
-  .badge-right {
-    top: 105px;
-  }
-  .floating-sticker {
-    font-size: 26px;
-    bottom: 72px;
-    -webkit-text-stroke-width: 3px;
-  }
   .scroll-cue,
   .hero-index {
     display: none;
@@ -1097,6 +1098,12 @@ button {
   .advantages-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+  }
+  .brand-card {
+    flex: 0 0 calc((100% - 14px) / 1.5);
+  }
+  .carousel-track {
+    gap: 14px;
   }
   .product-card {
     padding: 15px;
@@ -1167,6 +1174,9 @@ button {
   }
   .hero-actions {
     flex-wrap: wrap;
+  }
+  .brand-card {
+    flex: 0 0 85%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
